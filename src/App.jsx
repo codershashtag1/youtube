@@ -4,6 +4,7 @@ import Header from "./Components/Header"
 import MainContainer from "./Components/MainContainer"
 import appStore from "./utils/appStore"
 import { Provider } from "react-redux"
+import WatchVideoContainer from "./Components/WatchVideoContainer"
 
 const appRouter = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "watch",
-        element: <h1>Watch</h1>
+        element: <WatchVideoContainer />
       }
     ]
   }

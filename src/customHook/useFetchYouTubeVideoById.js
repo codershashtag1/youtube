@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { YOUTUBE_API } from '../utils/constant';
+import { YOUTUBE_API_BY_ID } from '../utils/constant';
 import { useDispatch } from 'react-redux';
-import { setVideos } from '../utils/VideosSlice';
+import { setSelectedVideo } from '../utils/VideosSlice';
 
-export const useFetchYouTubeVideo = async () => {
+export const useFetchYouTubeVideoById = async (videoId) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -12,9 +12,10 @@ export const useFetchYouTubeVideo = async () => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch(YOUTUBE_API);
+            const res = await fetch(YOUTUBE_API_BY_ID + `&id=${videoId}`);
             const data = await res.json();
-            dispatch(setVideos(data.items));
+            // console.log(data);
+            dispatch(setSelectedVideo(data.items));
         } catch (error) {
             console.error('Fetch error:', error);
         }

@@ -3,9 +3,11 @@ import MiniSideBar from "./MiniSideBar"
 
 const Body = () => {
   return (
-    <div className="flex">
+    <div className="flex h-screen">
       <MiniSideBar />
-      <Outlet />
+      <div className="flex-1 bg-black text-white overflow-y-auto">
+        <Outlet />
+      </div>
     </div>
     
   )

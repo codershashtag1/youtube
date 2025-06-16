@@ -4,7 +4,6 @@ const VideoCart = ({ video }) => {
   if(!video) return null;
 
   const { snippet, statistics } = video || {};
-  console.log(video);
   const { title, channelTitle, thumbnails, description } = snippet || {};
 
   return (
