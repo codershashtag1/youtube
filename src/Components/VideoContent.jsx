@@ -15,7 +15,7 @@ const VideoContent = () => {
     return (
         <div className="py-4 flex flex-wrap gap-4">
             {videos?.map((video) => (
-                <Link to={"/watch?v=" + video.id} onClick={() => dispatch(setMiniSideBarMenuFlagToFalse())}><VideoCart key={video.id} video={video} /></Link>
+                <Link to={"/watch?v=" + video.id} key={video.id} onClick={() => dispatch(setMiniSideBarMenuFlagToFalse())}><VideoCart key={video.id} video={video} /></Link>
             ))}
         </div>
     )
